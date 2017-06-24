@@ -1,0 +1,113 @@
+$font-stack: Segoe UI, sans-serif;
+$font-title: 'Gloria Hallelujah', cursive;
+$black: #333;
+$green: #4a976b;
+$grey: #dad8d8;
+$lightgrey: #f0eded;
+$red: #b6383b;
+$white: #fff;
+
+@mixin normalize{
+	margin: auto;
+	padding: 0;		
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin border-shadow($h, $v, $blur, $spread, $color){
+	-webkit-box-shadow: $h $v $blur $spread $color; 
+	   -moz-box-shadow: $h $v $blur $spread $color;
+	        box-shadow: $h $v $blur $spread $color;
+}
+
+body {
+	@include normalize;
+	font: 100% $font-stack;
+	color: $black;
+	position:relative;
+	background-color: $lightgrey;
+}
+
+main{
+	width:80%;
+	@include normalize();
+}
+
+nav{
+	background-color: $white;
+	height: 50px;
+	@include border-shadow(0px, 0px, 4px, 1px, $black);	
+
+	ul{
+		@include normalize;
+    	list-style: none; 
+    	width:80%;
+	}
+
+	li { 
+		display: inline-block; 
+		margin-top:5px;
+	}
+
+  	a {
+    	display: block;
+    	padding: 6px 12px;
+    	text-decoration: none;
+    	color: $red;
+    	font-size:20px;
+
+    	&:hover{
+    		color: $black;
+    	}
+  	}
+}
+
+h1{
+	color: $red;
+	font-family: $font-title;
+	font-size:80px;
+	@include normalize;
+}
+
+h2{
+	color: $green;
+}
+
+.omurice{
+	height:100%;
+	text-align: center;
+}
+
+.posts{
+	height: 300px;
+	width: 55%;
+	background: $white;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding: 30px;
+	display:inline-block;
+	@include border-shadow(0px, 0px, 2px, 1px, $grey);	
+
+}
+
+.trending{
+	height: 200px;
+	width: 31%;
+	background: $white;
+	margin-left:20px;
+	padding: 30px;
+	display:inline-block;
+	@include border-shadow(0px, 0px, 2px, 1px, $grey);	
+}
+
+footer{
+	@include normalize();
+	width:80%;
+	background-color: $white;
+	height:30px;
+}
